@@ -8,9 +8,13 @@
 #include <QString>
 #include<string>
 
-
+QString Qkey;
 std::string encryptDecrypt(std::string toEncrypt) {
-    char key[3] = {'K', 'C', 'Q'}; //Any chars will work
+    //QString Qkey = ui->lineEdit->displayText();
+    std::string key1 = Qkey.toStdString();
+    //char key[10] = {'K', 'C', 'Q'}; //Any chars will work
+    char key[3];
+    strcpy(key, key1.c_str());
 
     std::string output = toEncrypt;
 
@@ -46,8 +50,8 @@ msgBox.exec();
 void MainWindow::on_pushButton_2_clicked()
 {
     QString plaintextvalue2 = ui->textEdit_2->toPlainText();
-    QString Qkey = ui->lineEdit->displayText();
-    int key = Qkey.toInt();
+   // QString Qkey = ui->lineEdit->displayText();
+    //int key = Qkey.toInt();
     std::string str2 = plaintextvalue2.toStdString();
     //const  char* text1 = str.c_str();
    //char* text = (char *)text1;
@@ -63,8 +67,8 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_textEdit_textChanged()
 {
     QString plaintextvalue = ui->textEdit->toPlainText();
-    QString Qkey = ui->lineEdit->displayText();
-    int key = Qkey.toInt();
+    //QString Qkey = ui->lineEdit->displayText();
+   // int key = Qkey.toInt();
     std::string str = plaintextvalue.toStdString();
     //const  char* text1 = str.c_str();
    //char* text = (char *)text1;
@@ -81,5 +85,12 @@ void MainWindow::on_textEdit_textChanged()
 void MainWindow::on_textEdit_2_textChanged()
 {
 
+}
+
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+
+  Qkey = ui->lineEdit->displayText();
 }
 

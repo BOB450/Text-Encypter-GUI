@@ -26,6 +26,8 @@ private slots:
 
     void on_textEdit_2_textChanged();
 
+    void on_lineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 };

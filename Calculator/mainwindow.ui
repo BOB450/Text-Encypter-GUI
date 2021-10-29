@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Encrypt Text</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QFormLayout" name="formLayout">
@@ -21,13 +21,6 @@
     <property name="topMargin">
      <number>9</number>
     </property>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Encrypt</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="0">
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
@@ -47,7 +40,14 @@
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Key:          </string>
+       <string>      Key:          </string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>      Encrypt:</string>
       </property>
      </widget>
     </item>
