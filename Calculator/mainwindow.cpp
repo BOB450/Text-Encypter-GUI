@@ -45,7 +45,18 @@ msgBox.exec();
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    QString plaintextvalue2 = ui->textEdit_2->toPlainText();
+    QString Qkey = ui->lineEdit->displayText();
+    int key = Qkey.toInt();
+    std::string str2 = plaintextvalue2.toStdString();
+    //const  char* text1 = str.c_str();
+   //char* text = (char *)text1;
+   // reverse(str2.begin(), str2.end());
+    QString qstr2 = QString::fromStdString(str2);
+    std::string ans2 = encryptDecrypt(qstr2.toStdString());
 
+
+    ui->textEdit->setPlainText(QString::fromStdString(ans2));
 }
 
 
@@ -57,7 +68,7 @@ void MainWindow::on_textEdit_textChanged()
     std::string str = plaintextvalue.toStdString();
     //const  char* text1 = str.c_str();
    //char* text = (char *)text1;
-    reverse(str.begin(), str.end());
+   // reverse(str.begin(), str.end());
     QString qstr = QString::fromStdString(str);
     std::string ans = encryptDecrypt(qstr.toStdString());
 
