@@ -13,7 +13,8 @@ std::string encryptDecrypt(std::string toEncrypt) {
     //QString Qkey = ui->lineEdit->displayText();
     std::string key1 = Qkey.toStdString();
     //char key[10] = {'K', 'C', 'Q'}; //Any chars will work
-    char key[3];
+
+    char key[key1.length()];
     strcpy(key, key1.c_str());
 
     std::string output = toEncrypt;
