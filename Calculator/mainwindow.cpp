@@ -9,6 +9,17 @@
 #include<string>
 
 
+std::string encryptDecrypt(std::string toEncrypt) {
+    char key[3] = {'K', 'C', 'Q'}; //Any chars will work
+
+    std::string output = toEncrypt;
+
+    for (int i = 0; i < toEncrypt.size(); i++)
+        output[i] = toEncrypt[i] ^ key[i % (sizeof(key) / sizeof(char))];
+
+    return output;
+}
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -48,8 +59,10 @@ void MainWindow::on_textEdit_textChanged()
    //char* text = (char *)text1;
     reverse(str.begin(), str.end());
     QString qstr = QString::fromStdString(str);
+    std::string ans = encryptDecrypt(qstr.toStdString());
 
-    ui->textEdit_2->setPlainText(qstr);
+
+    ui->textEdit_2->setPlainText(QString::fromStdString(ans));
 
 }
 
