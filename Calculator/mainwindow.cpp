@@ -12,8 +12,11 @@ QString Qkey;
 std::string encryptDecrypt(std::string toEncrypt) {
     //QString Qkey = ui->lineEdit->displayText();
     std::string key1 = Qkey.toStdString();
-    //char key[10] = {'K', 'C', 'Q'}; //Any chars will work
-
+    //char keyT[10] = {'K', 'C', 'Q'}; //Any chars will work
+    if(key1.length() <= 0)
+    {
+        key1 = "Q";
+    }
     char key[key1.length()];
     strcpy(key, key1.c_str());
 
