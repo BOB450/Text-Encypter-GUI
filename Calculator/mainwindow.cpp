@@ -12,6 +12,10 @@ QString Qkey;
 std::string encryptDecrypt(std::string toEncrypt) {
     //QString Qkey = ui->lineEdit->displayText();
     std::string key1 = Qkey.toStdString();
+    // convert string to upper case
+    std::for_each(key1.begin(), key1.end(), [](char & c){
+        c = ::toupper(c);
+    });
     //char keyT[10] = {'K', 'C', 'Q'}; //Any chars will work
     if(key1.length() <= 0)
     {
