@@ -48,9 +48,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-QString plaintextvalue = ui->textEdit->toPlainText();
+
+//QString plaintextvalue = ui->textEdit->toPlainText();
 QMessageBox msgBox;
-msgBox.setText(plaintextvalue);
+msgBox.setText("Enter a key Then type in message of decrypt by enter encrypted text into decrypt box then click the decrypt button. Any key entered will be converted to uppercase.");
 msgBox.exec();
 }
 
